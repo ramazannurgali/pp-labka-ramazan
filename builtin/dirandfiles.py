@@ -20,13 +20,13 @@ def LAC(path):
         IP = os.path.join(path, IM)
         print(IM, "(Directory)" if os.path.isdir(IP) else "(File)")
 
-specified_path = 'C:\\Users\\ramazan\\Desktop\\pp2'
+SP = 'C:\\Users\\ramazan\\Desktop\\pp2'
 
-LD(specified_path)
+LD(SP)
 
-LF(specified_path)
+LF(SP)
 
-LAC(specified_path)
+LAC(SP)
 
  
 
@@ -58,73 +58,73 @@ def CPA(path):
 
 
 PTC = input("Enter the path: ")
-CPA(path_to_check)
+CPA(PTC)
     
     
 #3
-def CPE(path):
-    if os.path.exists(path):
-        print(f"The path '{path}' exists.")
-        filename = os.path.basename(path)
-        directory = os.path.dirname(path)
-        print(f"Filename: {filename}")
-        print(f"Directory: {directory}")
+def CPE(P):
+    if os.path.exists(P):
+        print(f"The path '{P}' exists.")
+        FN = os.path.basename(P)
+        D = os.path.dirname(P)
+        print(f"filename: {FN}")
+        print(f"directory: {D}")
     else:
-        print(f"The path '{path}' does not exist.")
+        print(f"The path '{P}' does not exist.")
 
-path_to_check = r"C:\Users\ramazan\Desktop\pp2"
+PTC = r"C:\Users\ramazan\Desktop\pp2"
 
-CPE(path_to_check)
+CPE(PTC)
 
 #4
-file_path_to_count = r'C:\Users\Daniyar\Desktop\Ответики.txt'
+FPTC = r'C:\Users\ramazan\Desktop\Ответики.txt'
 
-with open(file_path_to_count, 'r', encoding="utf-8") as file:
-    line_count = sum(1 for line in file)
+with open(FPTC, 'r', encoding="utf-8") as file:
+    LC = sum(1 for line in file)
 
-print(f"The number of lines in the file '{file_path_to_count}' is: {line_count}")
+print(f"The number of lines in the file '{FPTC}' is: {LC}")
 
 #5
-def write_list_to_file(file_path, my_list):
-      with open(file_path, 'w') as file:
-        for item in my_list:
+def WLTF(FP, ML):
+      with open(FP, 'w') as file:
+        for item in ML:
                 file.write(str(item) + '\n')
-        print(file_path)
+        print(FP)
     
 
 
-my_list = [1, 2, 3, 4, 5]
-file_path = 'output.txt'
+ML = [1, 2, 3, 4, 5]
+FP = 'output.txt'
 
-write_list_to_file(file_path, my_list)
+WLTF(FP, ML)
 
 #6
 for letters in string.ascii_uppercase:
-    file_name = f'{letters}.txt'
-    with open(file_name, 'w'):
+    FN = f'{letters}.txt'
+    with open(FN, 'w'):
         pass
 
 #7
-def copy_path2_in_path1(path1,path2):
-    with open(path2,'r') as path2:
-        file = path2.read()
+def CPIP(P1,P2):
+    with open(P2,'r') as P2:
+        F = P2.read()
         
-    with open(path1, 'w') as res_file:
-        res_file.write(file)
-    print(res_file)
-path1 = "path.txt"
-path2 = "path2.txt"
-copy_path2_in_path1(path1,path2)
+    with open(P1, 'w') as RF:
+        RF.write(file)
+    print(RF)
+P1 = "path.txt"
+P2 = "path2.txt"
+CPIP(P1,P2)
 
 #8
-def delete_file(file_to_delete):
-    if(os.path.exists(file_to_delete)):
-        if(os.access(file_to_delete, os.W_OK)):
-            os.remove(file_to_delete)
+def DF(FTD):
+    if(os.path.exists(FTD)):
+        if(os.access(FTD, os.W_OK)):
+            os.remove(FTD)
         else:
             print("Has no acces to file")
     else:
         print("File does not exist")
 
-file_to_delete = "text.txt"
-delete_file(file_to_delete)
+FTD = "text.txt"
+DF(FTD)
